@@ -179,14 +179,40 @@
         "description": "Team of specialized engineers with extensive experience in power electronics."
       }
     },
-    "achievements": [
-      "More than 10 years of experience in the sector",
-      "Presence in more than 15 European countries",
-      "50+ completed industrial projects",
-      "CE, RoHS and UL certifications",
-      "Team of 25+ specialized engineers",
-      "R&D&I with 15% revenue investment"
-    ]
+    "achievements": {
+      "experience": "More than 10 years of experience in the sector",
+      "presence": "Presence in more than 15 European countries", 
+      "projects": "50+ completed industrial projects",
+      "certifications": "CE, RoHS and UL certifications",
+      "team": "Team of 25+ specialized engineers",
+      "rnd": "R&D&I with 15% revenue investment"
+    },
+    "timeline": {
+      "2013": {
+        "title": "Foundation of GXTRONIC",
+        "description": "Start as a company specialized in power electronics for LED."
+      },
+      "2015": {
+        "title": "First production line",
+        "description": "Launch of our first series of high-efficiency LED drivers."
+      },
+      "2017": {
+        "title": "European expansion", 
+        "description": "Opening of markets in France, Germany and Italy."
+      },
+      "2019": {
+        "title": "ISO 9001 Certification",
+        "description": "Obtaining quality certification and process optimization."
+      },
+      "2021": {
+        "title": "R&D&I Division",
+        "description": "Creation of the research and development department."
+      },
+      "2024": {
+        "title": "New technologies",
+        "description": "Launch of smart drivers with IoT and remote control."
+      }
+    }
   },
   "contact": {
     "title": "Contact",

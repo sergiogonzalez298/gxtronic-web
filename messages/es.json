@@ -179,14 +179,40 @@
         "description": "Equipo de ingenieros especializados con amplia experiencia en electrónica de potencia."
       }
     },
-    "achievements": [
-      "Más de 10 años de experiencia en el sector",
-      "Presencia en más de 15 países europeos",
-      "50+ proyectos industriales completados",
-      "Certificaciones CE, RoHS y UL",
-      "Equipo de 25+ ingenieros especializados",
-      "I+D+i con inversión del 15% de facturación"
-    ]
+    "achievements": {
+      "experience": "Más de 10 años de experiencia en el sector",
+      "presence": "Presencia en más de 15 países europeos",
+      "projects": "50+ proyectos industriales completados", 
+      "certifications": "Certificaciones CE, RoHS y UL",
+      "team": "Equipo de 25+ ingenieros especializados",
+      "rnd": "I+D+i con inversión del 15% de facturación"
+    },
+    "timeline": {
+      "2013": {
+        "title": "Fundación de GXTRONIC",
+        "description": "Inicio como empresa especializada en electrónica de potencia para LED."
+      },
+      "2015": {
+        "title": "Primera línea de producción",
+        "description": "Lanzamiento de nuestra primera serie de drivers LED de alta eficiencia."
+      },
+      "2017": {
+        "title": "Expansión europea",
+        "description": "Apertura de mercados en Francia, Alemania e Italia."
+      },
+      "2019": {
+        "title": "Certificación ISO 9001", 
+        "description": "Obtención de certificación de calidad y optimización de procesos."
+      },
+      "2021": {
+        "title": "División I+D+i",
+        "description": "Creación del departamento de investigación y desarrollo."
+      },
+      "2024": {
+        "title": "Nuevas tecnologías",
+        "description": "Lanzamiento de drivers inteligentes con IoT y control remoto."
+      }
+    }
   },
   "contact": {
     "title": "Contacto",
