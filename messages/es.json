@@ -209,6 +209,7 @@
       "message": "Mensaje",
       "messagePlaceholder": "Describe tu proyecto o consulta...",
       "submit": "Enviar Consulta",
+      "loading": "Cargando formulario...",
       "queryTypes": {
         "products": "Información de productos",
         "quote": "Solicitud de cotización",

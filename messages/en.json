@@ -209,6 +209,7 @@
       "message": "Message",
       "messagePlaceholder": "Describe your project or inquiry...",
       "submit": "Send Inquiry",
+      "loading": "Loading form...",
       "queryTypes": {
         "products": "Product information",
         "quote": "Quote request",

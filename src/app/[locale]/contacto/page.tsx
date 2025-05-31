@@ -21,7 +21,7 @@ import {
   AccessTime,
   Business,
 } from '@mui/icons-material';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
 export default function ContactoPage() {
@@ -55,6 +55,7 @@ export default function ContactoPage() {
     },
   ];
 
+  const [mounted, setMounted] = useState(false);
   const [formData, setFormData] = useState({
     nombre: '',
     empresa: '',
@@ -63,6 +64,10 @@ export default function ContactoPage() {
     tipoConsulta: '',
     mensaje: '',
   });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleChange = (field: string) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | { target: { value: string } }) => {
     setFormData({ ...formData, [field]: event.target.value });
@@ -105,8 +110,9 @@ export default function ContactoPage() {
                   {t('form.description')}
                 </Typography>
 
-                <Box component="form" onSubmit={handleSubmit}>
-                  <Grid container spacing={3}>
+                {mounted ? (
+                  <Box component="form" onSubmit={handleSubmit}>
+                    <Grid container spacing={3}>
                     <Grid size={{ xs: 12, sm: 6 }}>
                       <TextField
                         fullWidth
@@ -183,8 +189,15 @@ export default function ContactoPage() {
                         {t('form.submit')}
                       </Button>
                     </Grid>
-                  </Grid>
-                </Box>
+                    </Grid>
+                  </Box>
+                ) : (
+                  <Box sx={{ p: 4, textAlign: 'center' }}>
+                    <Typography variant="body2" color="text.secondary">
+                      {t('form.loading')}
+                    </Typography>
+                  </Box>
+                )}
               </CardContent>
             </Card>
           </Grid>
