@@ -22,35 +22,39 @@ import {
   Business,
 } from '@mui/icons-material';
 import { useState } from 'react';
-
-const contactInfo = [
-  {
-    icon: <Email fontSize="large" />,
-    title: 'Email',
-    content: 'info@gxtronic.com',
-    subtitle: 'ventas@gxtronic.com',
-  },
-  {
-    icon: <Phone fontSize="large" />,
-    title: 'Teléfono',
-    content: '+34 XXX XXX XXX',
-    subtitle: 'Lunes a Viernes 9:00 - 18:00',
-  },
-  {
-    icon: <LocationOn fontSize="large" />,
-    title: 'Ubicación',
-    content: 'España',
-    subtitle: 'Zona de cobertura: Europa',
-  },
-  {
-    icon: <AccessTime fontSize="large" />,
-    title: 'Horario',
-    content: 'Lun - Vie: 9:00 - 18:00',
-    subtitle: 'Sáb: 9:00 - 14:00',
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export default function ContactoPage() {
+  const t = useTranslations('contact');
+  const tInfo = useTranslations('contact.info');
+
+  const contactInfo = [
+    {
+      icon: <Email fontSize="large" />,
+      title: tInfo('email.title'),
+      content: tInfo('email.content'),
+      subtitle: tInfo('email.subtitle'),
+    },
+    {
+      icon: <Phone fontSize="large" />,
+      title: tInfo('phone.title'),
+      content: tInfo('phone.content'),
+      subtitle: tInfo('phone.subtitle'),
+    },
+    {
+      icon: <LocationOn fontSize="large" />,
+      title: tInfo('location.title'),
+      content: tInfo('location.content'),
+      subtitle: tInfo('location.subtitle'),
+    },
+    {
+      icon: <AccessTime fontSize="large" />,
+      title: tInfo('schedule.title'),
+      content: tInfo('schedule.content'),
+      subtitle: tInfo('schedule.subtitle'),
+    },
+  ];
+
   const [formData, setFormData] = useState({
     nombre: '',
     empresa: '',
@@ -81,10 +85,10 @@ export default function ContactoPage() {
       >
         <Container maxWidth="lg">
           <Typography variant="h2" gutterBottom>
-            Contacto
+            {t('title')}
           </Typography>
           <Typography variant="h6" sx={{ opacity: 0.9 }}>
-            Estamos aquí para ayudarte con tus proyectos de iluminación LED
+            {t('subtitle')}
           </Typography>
         </Container>
       </Box>
@@ -95,10 +99,10 @@ export default function ContactoPage() {
             <Card>
               <CardContent sx={{ p: 4 }}>
                 <Typography variant="h4" gutterBottom>
-                  Envíanos tu consulta
+                  {t('form.title')}
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 3, color: 'text.secondary' }}>
-                  Completa el formulario y nuestro equipo técnico se pondrá en contacto contigo
+                  {t('form.description')}
                 </Typography>
 
                 <Box component="form" onSubmit={handleSubmit}>
@@ -106,7 +110,7 @@ export default function ContactoPage() {
                     <Grid size={{ xs: 12, sm: 6 }}>
                       <TextField
                         fullWidth
-                        label="Nombre completo"
+                        label={t('form.fullName')}
                         value={formData.nombre}
                         onChange={handleChange('nombre')}
                         required
@@ -115,7 +119,7 @@ export default function ContactoPage() {
                     <Grid size={{ xs: 12, sm: 6 }}>
                       <TextField
                         fullWidth
-                        label="Empresa"
+                        label={t('form.company')}
                         value={formData.empresa}
                         onChange={handleChange('empresa')}
                       />
@@ -123,7 +127,7 @@ export default function ContactoPage() {
                     <Grid size={{ xs: 12, sm: 6 }}>
                       <TextField
                         fullWidth
-                        label="Email"
+                        label={t('form.email')}
                         type="email"
                         value={formData.email}
                         onChange={handleChange('email')}
@@ -133,39 +137,39 @@ export default function ContactoPage() {
                     <Grid size={{ xs: 12, sm: 6 }}>
                       <TextField
                         fullWidth
-                        label="Teléfono"
+                        label={t('form.phone')}
                         value={formData.telefono}
                         onChange={handleChange('telefono')}
                       />
                     </Grid>
                     <Grid size={{ xs: 12 }}>
 
-                  c    <FormControl fullWidth>
-                        <InputLabel>Tipo de consulta</InputLabel>
+                      <FormControl fullWidth>
+                        <InputLabel>{t('form.queryType')}</InputLabel>
                         <Select
                           value={formData.tipoConsulta}
                           onChange={handleChange('tipoConsulta')}
-                          label="Tipo de consulta"
+                          label={t('form.queryType')}
                           required
                         >
-                          <MenuItem value="productos">Información de productos</MenuItem>
-                          <MenuItem value="cotizacion">Solicitud de cotización</MenuItem>
-                          <MenuItem value="personalizado">Desarrollo personalizado</MenuItem>
-                          <MenuItem value="soporte">Soporte técnico</MenuItem>
-                          <MenuItem value="distribucion">Oportunidades de distribución</MenuItem>
-                          <MenuItem value="otro">Otro</MenuItem>
+                          <MenuItem value="productos">{t('form.queryTypes.products')}</MenuItem>
+                          <MenuItem value="cotizacion">{t('form.queryTypes.quote')}</MenuItem>
+                          <MenuItem value="personalizado">{t('form.queryTypes.custom')}</MenuItem>
+                          <MenuItem value="soporte">{t('form.queryTypes.support')}</MenuItem>
+                          <MenuItem value="distribucion">{t('form.queryTypes.distribution')}</MenuItem>
+                          <MenuItem value="otro">{t('form.queryTypes.other')}</MenuItem>
                         </Select>
                       </FormControl>
                     </Grid>
                     <Grid size={{ xs: 12 }}>
                       <TextField
                         fullWidth
-                        label="Mensaje"
+                        label={t('form.message')}
                         multiline
                         rows={4}
                         value={formData.mensaje}
                         onChange={handleChange('mensaje')}
-                        placeholder="Describe tu proyecto o consulta..."
+                        placeholder={t('form.messagePlaceholder')}
                         required
                       />
                     </Grid>
@@ -176,7 +180,7 @@ export default function ContactoPage() {
                         size="large"
                         sx={{ mt: 2 }}
                       >
-                        Enviar Consulta
+                        {t('form.submit')}
                       </Button>
                     </Grid>
                   </Grid>
@@ -215,17 +219,17 @@ export default function ContactoPage() {
       <Box sx={{ bgcolor: 'grey.50', py: 6 }}>
         <Container maxWidth="lg">
           <Typography variant="h4" align="center" gutterBottom>
-            ¿Por qué elegir GXTRONIC?
+            {t('whyChoose')}
           </Typography>
           <Grid container spacing={4} sx={{ mt: 2 }}>
             <Grid size={{ xs: 12, md: 4 }}>
               <Box sx={{ textAlign: 'center' }}>
                 <Business color="primary" sx={{ fontSize: 48, mb: 2 }} />
                 <Typography variant="h6" gutterBottom>
-                  Experiencia Industrial
+                  {t('reasons.experience.title')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Más de 10 años desarrollando soluciones LED para la industria
+                  {t('reasons.experience.description')}
                 </Typography>
               </Box>
             </Grid>
@@ -233,10 +237,10 @@ export default function ContactoPage() {
               <Box sx={{ textAlign: 'center' }}>
                 <Phone color="primary" sx={{ fontSize: 48, mb: 2 }} />
                 <Typography variant="h6" gutterBottom>
-                  Soporte Personalizado
+                  {t('reasons.support.title')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Atención directa con nuestros ingenieros especializados
+                  {t('reasons.support.description')}
                 </Typography>
               </Box>
             </Grid>
@@ -244,10 +248,10 @@ export default function ContactoPage() {
               <Box sx={{ textAlign: 'center' }}>
                 <LocationOn color="primary" sx={{ fontSize: 48, mb: 2 }} />
                 <Typography variant="h6" gutterBottom>
-                  Cobertura Europea
+                  {t('reasons.coverage.title')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Envíos rápidos y soporte técnico en toda Europa
+                  {t('reasons.coverage.description')}
                 </Typography>
               </Box>
             </Grid>
@@ -260,11 +264,10 @@ export default function ContactoPage() {
           <Grid container spacing={4} alignItems="center">
             <Grid size={{ xs: 12, md: 8 }}>
               <Typography variant="h5" gutterBottom>
-                ¿Necesitas una respuesta inmediata?
+                {t('urgentTitle')}
               </Typography>
               <Typography variant="body1" sx={{ opacity: 0.9 }}>
-                Para consultas urgentes o soporte técnico inmediato,
-                llámanos directamente durante horario comercial.
+                {t('urgentDescription')}
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>
@@ -275,7 +278,7 @@ export default function ContactoPage() {
                 fullWidth
                 startIcon={<Phone />}
               >
-                +34 XXX XXX XXX
+                {tInfo('phone.content')}
               </Button>
             </Grid>
           </Grid>
