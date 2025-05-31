@@ -18,6 +18,7 @@ import {
   Settings,
   Security,
 } from '@mui/icons-material';
+import { useTranslations } from 'next-intl';
 
 const products = [
   {
@@ -78,30 +79,33 @@ const products = [
   },
 ];
 
-const categories = [
-  {
-    name: 'Baja Potencia',
-    description: 'Hasta 50W - Ideal para aplicaciones residenciales',
-    icon: <Lightbulb />,
-  },
-  {
-    name: 'Potencia Media',
-    description: '51W - 100W - Perfectos para aplicaciones comerciales',
-    icon: <Power />,
-  },
-  {
-    name: 'Alta Potencia',
-    description: 'Más de 100W - Para aplicaciones industriales',
-    icon: <Settings />,
-  },
-  {
-    name: 'Industrial',
-    description: 'Condiciones extremas - Máxima durabilidad',
-    icon: <Security />,
-  },
-];
 
 export default function ProductosPage() {
+  const t = useTranslations('products');
+  
+  const categories = [
+    {
+      name: t('categoryTypes.lowPower.name'),
+      description: t('categoryTypes.lowPower.description'),
+      icon: <Lightbulb />,
+    },
+    {
+      name: t('categoryTypes.mediumPower.name'),
+      description: t('categoryTypes.mediumPower.description'),
+      icon: <Power />,
+    },
+    {
+      name: t('categoryTypes.highPower.name'),
+      description: t('categoryTypes.highPower.description'),
+      icon: <Settings />,
+    },
+    {
+      name: t('categoryTypes.industrial.name'),
+      description: t('categoryTypes.industrial.description'),
+      icon: <Security />,
+    },
+  ];
+  
   return (
     <Box>
       <Box
@@ -114,17 +118,17 @@ export default function ProductosPage() {
       >
         <Container maxWidth="lg">
           <Typography variant="h2" gutterBottom>
-            Nuestros Productos
+            {t('title')}
           </Typography>
           <Typography variant="h6" sx={{ opacity: 0.9 }}>
-            Drivers LED de alta calidad para todas tus necesidades
+            {t('subtitle')}
           </Typography>
         </Container>
       </Box>
 
       <Container maxWidth="lg" sx={{ py: 6 }}>
         <Typography variant="h4" gutterBottom>
-          Categorías de Productos
+          {t('categories')}
         </Typography>
         <Grid container spacing={3} sx={{ mb: 6 }}>
           {categories.map((category, index) => (
@@ -149,7 +153,7 @@ export default function ProductosPage() {
         <Divider sx={{ my: 4 }} />
 
         <Typography variant="h4" gutterBottom>
-          Catálogo de Drivers LED
+          {t('catalog')}
         </Typography>
         <Grid container spacing={4}>
           {products.map((product) => (
@@ -165,7 +169,7 @@ export default function ProductosPage() {
                   }}
                 >
                   <Typography variant="h6" color="text.secondary">
-                    Imagen del Producto
+                    {t('productImage')}
                   </Typography>
                 </CardMedia>
                 <CardContent>
@@ -184,7 +188,7 @@ export default function ProductosPage() {
                   
                   <Box sx={{ mb: 2 }}>
                     <Typography variant="subtitle2" gutterBottom>
-                      Características:
+                      {t('features')}
                     </Typography>
                     <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
                       {product.features.map((feature, index) => (
@@ -195,7 +199,7 @@ export default function ProductosPage() {
 
                   <Box sx={{ mb: 3 }}>
                     <Typography variant="subtitle2" gutterBottom>
-                      Especificaciones:
+                      {t('specifications')}
                     </Typography>
                     <Grid container spacing={1}>
                       <Grid item xs={6}>
@@ -222,7 +226,7 @@ export default function ProductosPage() {
                   </Box>
 
                   <Button variant="contained" fullWidth>
-                    Solicitar Información
+                    {t('requestInfo')}
                   </Button>
                 </CardContent>
               </Card>
@@ -236,16 +240,15 @@ export default function ProductosPage() {
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={8}>
               <Typography variant="h5" gutterBottom>
-                ¿Necesitas un driver personalizado?
+                {t('customDriver')}
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                Ofrecemos soluciones personalizadas para proyectos específicos. 
-                Nuestro equipo técnico puede desarrollar drivers LED adaptados a tus necesidades exactas.
+                {t('customDriverDesc')}
               </Typography>
             </Grid>
             <Grid item xs={12} md={4}>
               <Button variant="contained" size="large" fullWidth>
-                Contactar Especialista
+                {t('contactSpecialist')}
               </Button>
             </Grid>
           </Grid>

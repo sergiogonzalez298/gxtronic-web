@@ -1,0 +1,245 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "products": "Productos",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "GXTRONIC",
+    "subtitle": "Fabricante de Drivers LED",
+    "description": "Líderes en la fabricación de drivers LED de alta calidad para aplicaciones industriales y comerciales. Soluciones innovadoras que garantizan eficiencia, durabilidad y rendimiento óptimo.",
+    "viewProducts": "Ver Productos",
+    "contact": "Contactar",
+    "ledDrivers": "Drivers LED",
+    "ledDriversDesc": "Tecnología avanzada para iluminación profesional",
+    "whyChoose": "¿Por qué elegir GXTRONIC?",
+    "whyChooseDesc": "Ofrecemos soluciones completas en drivers LED con la más alta calidad y tecnología",
+    "ourProducts": "Nuestros Productos",
+    "ourProductsDesc": "Fabricamos una amplia gama de drivers LED diseñados para diferentes aplicaciones y necesidades específicas.",
+    "viewCatalog": "Ver Catálogo Completo",
+    "mainApplications": "Aplicaciones Principales",
+    "features": {
+      "design": {
+        "title": "Diseño Avanzado",
+        "description": "Drivers LED con tecnología de vanguardia y diseño optimizado para máximo rendimiento."
+      },
+      "quality": {
+        "title": "Alta Calidad",
+        "description": "Productos fabricados con los más altos estándares de calidad y certificaciones internacionales."
+      },
+      "efficiency": {
+        "title": "Eficiencia Energética",
+        "description": "Soluciones que maximizan la eficiencia energética y reducen el consumo."
+      },
+      "support": {
+        "title": "Soporte Técnico",
+        "description": "Equipo de soporte técnico especializado para asesoramiento y resolución de dudas."
+      }
+    },
+    "applications": [
+      "Iluminación comercial",
+      "Alumbrado público",
+      "Aplicaciones industriales",
+      "Proyectos arquitectónicos",
+      "Sistemas de emergencia"
+    ],
+    "chips": {
+      "dimmable": "Drivers Dimables",
+      "highPower": "Alta Potencia",
+      "industrial": "Uso Industrial",
+      "certified": "Certificados"
+    }
+  },
+  "products": {
+    "title": "Nuestros Productos",
+    "subtitle": "Drivers LED de alta calidad para todas tus necesidades",
+    "categories": "Categorías de Productos",
+    "catalog": "Catálogo de Drivers LED",
+    "requestInfo": "Solicitar Información",
+    "customDriver": "¿Necesitas un driver personalizado?",
+    "customDriverDesc": "Ofrecemos soluciones personalizadas para proyectos específicos. Nuestro equipo técnico puede desarrollar drivers LED adaptados a tus necesidades exactas.",
+    "contactSpecialist": "Contactar Especialista",
+    "specifications": "Especificaciones:",
+    "features": "Características:",
+    "productImage": "Imagen del Producto",
+    "categoryTypes": {
+      "lowPower": {
+        "name": "Baja Potencia",
+        "description": "Hasta 50W - Ideal para aplicaciones residenciales"
+      },
+      "mediumPower": {
+        "name": "Potencia Media", 
+        "description": "51W - 100W - Perfectos para aplicaciones comerciales"
+      },
+      "highPower": {
+        "name": "Alta Potencia",
+        "description": "Más de 100W - Para aplicaciones industriales"
+      },
+      "industrial": {
+        "name": "Industrial",
+        "description": "Condiciones extremas - Máxima durabilidad"
+      }
+    }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones completas para todas tus necesidades en drivers LED",
+    "workProcess": "Proceso de Trabajo",
+    "workProcessDesc": "Así es como trabajamos contigo para entregar la mejor solución",
+    "faq": "Preguntas Frecuentes",
+    "faqDesc": "Respuestas a las consultas más comunes sobre nuestros servicios",
+    "readyToStart": "¿Listo para empezar tu proyecto?",
+    "readyToStartDesc": "Contacta con nuestro equipo técnico para una consulta gratuita y descubre cómo podemos ayudarte.",
+    "requestConsultation": "Solicitar Consulta",
+    "serviceTypes": {
+      "customDevelopment": {
+        "title": "Desarrollo Personalizado",
+        "description": "Diseñamos y fabricamos drivers LED personalizados según tus especificaciones."
+      },
+      "technicalSupport": {
+        "title": "Soporte Técnico",
+        "description": "Equipo especializado para resolver dudas técnicas y problemas de implementación."
+      },
+      "installation": {
+        "title": "Instalación y Puesta en Marcha",
+        "description": "Servicios completos de instalación y configuración para proyectos grandes."
+      },
+      "maintenance": {
+        "title": "Mantenimiento Preventivo",
+        "description": "Programas de mantenimiento para garantizar el óptimo funcionamiento."
+      }
+    },
+    "workSteps": {
+      "consultation": {
+        "title": "Consulta",
+        "description": "Analizamos tus necesidades y requerimientos específicos"
+      },
+      "proposal": {
+        "title": "Propuesta",
+        "description": "Desarrollamos una propuesta técnica y comercial personalizada"
+      },
+      "development": {
+        "title": "Desarrollo", 
+        "description": "Fabricamos y testemos la solución según especificaciones"
+      },
+      "delivery": {
+        "title": "Entrega",
+        "description": "Instalación, puesta en marcha y soporte continuo"
+      }
+    }
+  },
+  "about": {
+    "title": "Acerca de GXTRONIC",
+    "subtitle": "Líderes en innovación y fabricación de drivers LED",
+    "ourHistory": "Nuestra Historia",
+    "ourMission": "Nuestra Misión",
+    "missionText": "Desarrollar y fabricar drivers LED de alta calidad que permitan a nuestros clientes crear soluciones de iluminación eficientes, duraderas y sostenibles para un futuro mejor.",
+    "ourValues": "Nuestros Valores",
+    "ourValuesDesc": "Los principios que guían nuestro trabajo diario",
+    "ourJourney": "Nuestra Trayectoria",
+    "ourAchievements": "Nuestros Logros",
+    "ledFuture": "El Futuro de la Iluminación LED",
+    "ledFutureDesc": "Continuamos innovando para ofrecer las mejores soluciones en drivers LED, incorporando tecnologías emergentes como IoT, control inteligente y sistemas de monitoreo avanzado.",
+    "continuousInnovation": "Innovación Continua",
+    "historyText": "GXTRONIC nació en 2013 con la visión de revolucionar el sector de la iluminación LED a través de drivers de alta eficiencia y calidad superior. Desde nuestros inicios, nos hemos especializado en el desarrollo de soluciones electrónicas de potencia que maximizan el rendimiento de los sistemas de iluminación LED.",
+    "historyText2": "Con más de una década de experiencia, nos hemos consolidado como una empresa líder en el mercado europeo, ofreciendo productos innovadores que cumplen con los más altos estándares internacionales de calidad y eficiencia energética.",
+    "historyText3": "Nuestro compromiso con la excelencia nos ha llevado a establecer relaciones duraderas con clientes en toda Europa, desde pequeñas empresas hasta grandes corporaciones industriales.",
+    "values": {
+      "innovation": {
+        "title": "Innovación",
+        "description": "Desarrollo continuo de tecnologías avanzadas para drivers LED de última generación."
+      },
+      "quality": {
+        "title": "Calidad",
+        "description": "Compromiso con los más altos estándares de calidad en todos nuestros productos."
+      },
+      "sustainability": {
+        "title": "Sostenibilidad",
+        "description": "Soluciones eficientes que contribuyen al ahorro energético y cuidado del medio ambiente."
+      },
+      "expertise": {
+        "title": "Expertise",
+        "description": "Equipo de ingenieros especializados con amplia experiencia en electrónica de potencia."
+      }
+    },
+    "achievements": [
+      "Más de 10 años de experiencia en el sector",
+      "Presencia en más de 15 países europeos",
+      "50+ proyectos industriales completados",
+      "Certificaciones CE, RoHS y UL",
+      "Equipo de 25+ ingenieros especializados",
+      "I+D+i con inversión del 15% de facturación"
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Estamos aquí para ayudarte con tus proyectos de iluminación LED",
+    "sendQuery": "Envíanos tu consulta",
+    "sendQueryDesc": "Completa el formulario y nuestro equipo técnico se pondrá en contacto contigo",
+    "whyChoose": "¿Por qué elegir GXTRONIC?",
+    "immediateResponse": "¿Necesitas una respuesta inmediata?",
+    "immediateResponseDesc": "Para consultas urgentes o soporte técnico inmediato, llámanos directamente durante horario comercial.",
+    "form": {
+      "fullName": "Nombre completo",
+      "company": "Empresa",
+      "email": "Email",
+      "phone": "Teléfono",
+      "queryType": "Tipo de consulta",
+      "message": "Mensaje",
+      "messagePlaceholder": "Describe tu proyecto o consulta...",
+      "submit": "Enviar Consulta",
+      "queryTypes": {
+        "products": "Información de productos",
+        "quote": "Solicitud de cotización",
+        "custom": "Desarrollo personalizado",
+        "support": "Soporte técnico",
+        "distribution": "Oportunidades de distribución",
+        "other": "Otro"
+      }
+    },
+    "info": {
+      "email": {
+        "title": "Email",
+        "content": "info@gxtronic.com",
+        "subtitle": "ventas@gxtronic.com"
+      },
+      "phone": {
+        "title": "Teléfono",
+        "content": "+34 XXX XXX XXX",
+        "subtitle": "Lunes a Viernes 9:00 - 18:00"
+      },
+      "location": {
+        "title": "Ubicación",
+        "content": "España",
+        "subtitle": "Zona de cobertura: Europa"
+      },
+      "schedule": {
+        "title": "Horario",
+        "content": "Lun - Vie: 9:00 - 18:00",
+        "subtitle": "Sáb: 9:00 - 14:00"
+      }
+    },
+    "reasons": {
+      "experience": {
+        "title": "Experiencia Industrial",
+        "description": "Más de 10 años desarrollando soluciones LED para la industria"
+      },
+      "support": {
+        "title": "Soporte Personalizado",
+        "description": "Atención directa con nuestros ingenieros especializados"
+      },
+      "coverage": {
+        "title": "Cobertura Europea",
+        "description": "Envíos rápidos y soporte técnico en toda Europa"
+      }
+    }
+  },
+  "footer": {
+    "description": "Fabricante líder de drivers LED de alta calidad para aplicaciones industriales y comerciales.",
+    "contact": "Contacto",
+    "followUs": "Síguenos",
+    "allRightsReserved": "Todos los derechos reservados."
+  }
+}

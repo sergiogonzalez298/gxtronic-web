@@ -16,31 +16,34 @@ import {
   Speed,
   Support,
 } from '@mui/icons-material';
-
-const features = [
-  {
-    icon: <Engineering fontSize="large" />,
-    title: 'Diseño Avanzado',
-    description: 'Drivers LED con tecnología de vanguardia y diseño optimizado para máximo rendimiento.',
-  },
-  {
-    icon: <HighQuality fontSize="large" />,
-    title: 'Alta Calidad',
-    description: 'Productos fabricados con los más altos estándares de calidad y certificaciones internacionales.',
-  },
-  {
-    icon: <Speed fontSize="large" />,
-    title: 'Eficiencia Energética',
-    description: 'Soluciones que maximizan la eficiencia energética y reducen el consumo.',
-  },
-  {
-    icon: <Support fontSize="large" />,
-    title: 'Soporte Técnico',
-    description: 'Equipo de soporte técnico especializado para asesoramiento y resolución de dudas.',
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export default function Home() {
+  const t = useTranslations('home');
+  
+  const features = [
+    {
+      icon: <Engineering fontSize="large" />,
+      title: t('features.design.title'),
+      description: t('features.design.description'),
+    },
+    {
+      icon: <HighQuality fontSize="large" />,
+      title: t('features.quality.title'),
+      description: t('features.quality.description'),
+    },
+    {
+      icon: <Speed fontSize="large" />,
+      title: t('features.efficiency.title'),
+      description: t('features.efficiency.description'),
+    },
+    {
+      icon: <Support fontSize="large" />,
+      title: t('features.support.title'),
+      description: t('features.support.description'),
+    },
+  ];
+
   return (
     <Box>
       <Box
@@ -55,22 +58,20 @@ export default function Home() {
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>
               <Typography variant="h1" gutterBottom>
-                GXTRONIC
+                {t('title')}
               </Typography>
               <Typography variant="h5" gutterBottom>
-                Fabricante de Drivers LED
+                {t('subtitle')}
               </Typography>
               <Typography variant="body1" sx={{ mb: 3, opacity: 0.9 }}>
-                Líderes en la fabricación de drivers LED de alta calidad para aplicaciones 
-                industriales y comerciales. Soluciones innovadoras que garantizan eficiencia, 
-                durabilidad y rendimiento óptimo.
+                {t('description')}
               </Typography>
               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                 <Button variant="contained" color="secondary" size="large">
-                  Ver Productos
+                  {t('viewProducts')}
                 </Button>
                 <Button variant="outlined" color="inherit" size="large">
-                  Contactar
+                  {t('contact')}
                 </Button>
               </Box>
             </Grid>
@@ -84,10 +85,10 @@ export default function Home() {
                 }}
               >
                 <Typography variant="h4" gutterBottom>
-                  Drivers LED
+                  {t('ledDrivers')}
                 </Typography>
                 <Typography variant="body1">
-                  Tecnología avanzada para iluminación profesional
+                  {t('ledDriversDesc')}
                 </Typography>
               </Box>
             </Grid>
@@ -97,10 +98,10 @@ export default function Home() {
 
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <Typography variant="h2" align="center" gutterBottom>
-          ¿Por qué elegir GXTRONIC?
+          {t('whyChoose.title')}
         </Typography>
         <Typography variant="body1" align="center" sx={{ mb: 6, color: 'text.secondary' }}>
-          Ofrecemos soluciones completas en drivers LED con la más alta calidad y tecnología
+          {t('whyChoose.description')}
         </Typography>
         
         <Grid container spacing={4}>
@@ -129,20 +130,19 @@ export default function Home() {
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>
               <Typography variant="h3" gutterBottom>
-                Nuestros Productos
+                {t('products.title')}
               </Typography>
               <Typography variant="body1" sx={{ mb: 3 }}>
-                Fabricamos una amplia gama de drivers LED diseñados para diferentes 
-                aplicaciones y necesidades específicas.
+                {t('products.description')}
               </Typography>
               <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mb: 3 }}>
-                <Chip label="Drivers Dimables" />
-                <Chip label="Alta Potencia" />
-                <Chip label="Uso Industrial" />
-                <Chip label="Certificados" />
+                <Chip label={t('products.chips.dimmable')} />
+                <Chip label={t('products.chips.highPower')} />
+                <Chip label={t('products.chips.industrial')} />
+                <Chip label={t('products.chips.certified')} />
               </Box>
               <Button variant="contained" size="large">
-                Ver Catálogo Completo
+                {t('products.viewCatalog')}
               </Button>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -155,14 +155,14 @@ export default function Home() {
                 }}
               >
                 <Typography variant="h6" gutterBottom>
-                  Aplicaciones Principales
+                  {t('applications.title')}
                 </Typography>
                 <Box component="ul" sx={{ pl: 2 }}>
-                  <li>Iluminación comercial</li>
-                  <li>Alumbrado público</li>
-                  <li>Aplicaciones industriales</li>
-                  <li>Proyectos arquitectónicos</li>
-                  <li>Sistemas de emergencia</li>
+                  <li>{t('applications.commercial')}</li>
+                  <li>{t('applications.publicLighting')}</li>
+                  <li>{t('applications.industrial')}</li>
+                  <li>{t('applications.architectural')}</li>
+                  <li>{t('applications.emergency')}</li>
                 </Box>
               </Box>
             </Grid>

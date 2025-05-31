@@ -8,17 +8,21 @@ import {
   Box,
   Container,
 } from '@mui/material';
-import Link from 'next/link';
-
-const navigationItems = [
-  { label: 'Inicio', href: '/' },
-  { label: 'Productos', href: '/productos' },
-  { label: 'Servicios', href: '/servicios' },
-  { label: 'Nosotros', href: '/nosotros' },
-  { label: 'Contacto', href: '/contacto' },
-];
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
+import LanguageSelector from './LanguageSelector';
 
 export default function Header() {
+  const t = useTranslations('navigation');
+
+  const navigationItems = [
+    { label: t('home'), href: '/' },
+    { label: t('products'), href: '/productos' },
+    { label: t('services'), href: '/servicios' },
+    { label: t('about'), href: '/nosotros' },
+    { label: t('contact'), href: '/contacto' },
+  ];
+
   return (
     <AppBar position="sticky" elevation={1}>
       <Container maxWidth="lg">
@@ -32,7 +36,7 @@ export default function Header() {
               GXTRONIC
             </Link>
           </Typography>
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
             {navigationItems.map((item) => (
               <Link key={item.href} href={item.href} style={{ textDecoration: 'none' }}>
                 <Button
@@ -48,6 +52,9 @@ export default function Header() {
                 </Button>
               </Link>
             ))}
+            <Box sx={{ ml: 2 }}>
+              <LanguageSelector />
+            </Box>
           </Box>
         </Toolbar>
       </Container>
