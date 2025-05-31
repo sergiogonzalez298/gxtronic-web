@@ -14,12 +14,29 @@
     "contact": "Contact",
     "ledDrivers": "LED Drivers",
     "ledDriversDesc": "Advanced technology for professional lighting",
-    "whyChoose": "Why choose GXTRONIC?",
-    "whyChooseDesc": "We offer complete LED driver solutions with the highest quality and technology",
-    "ourProducts": "Our Products",
-    "ourProductsDesc": "We manufacture a wide range of LED drivers designed for different applications and specific needs.",
-    "viewCatalog": "View Complete Catalog",
-    "mainApplications": "Main Applications",
+    "whyChoose": {
+      "title": "Why choose GXTRONIC?",
+      "description": "We offer complete LED driver solutions with the highest quality and technology"
+    },
+    "products": {
+      "title": "Our Products",
+      "description": "We manufacture a wide range of LED drivers designed for different applications and specific needs.",
+      "viewCatalog": "View Complete Catalog",
+      "chips": {
+        "dimmable": "Dimmable Drivers",
+        "highPower": "High Power",
+        "industrial": "Industrial Use",
+        "certified": "Certified"
+      }
+    },
+    "applications": {
+      "title": "Main Applications",
+      "commercial": "Commercial lighting",
+      "publicLighting": "Public lighting",
+      "industrial": "Industrial applications",
+      "architectural": "Architectural projects",
+      "emergency": "Emergency systems"
+    },
     "features": {
       "design": {
         "title": "Advanced Design",
@@ -37,19 +54,6 @@
         "title": "Technical Support",
         "description": "Specialized technical support team for advice and troubleshooting."
       }
-    },
-    "applications": [
-      "Commercial lighting",
-      "Street lighting",
-      "Industrial applications",
-      "Architectural projects",
-      "Emergency systems"
-    ],
-    "chips": {
-      "dimmable": "Dimmable Drivers",
-      "highPower": "High Power",
-      "industrial": "Industrial Use",
-      "certified": "Certified"
     }
   },
   "products": {

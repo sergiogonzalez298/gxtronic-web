@@ -14,12 +14,29 @@
     "contact": "Contactar",
     "ledDrivers": "Drivers LED",
     "ledDriversDesc": "Tecnología avanzada para iluminación profesional",
-    "whyChoose": "¿Por qué elegir GXTRONIC?",
-    "whyChooseDesc": "Ofrecemos soluciones completas en drivers LED con la más alta calidad y tecnología",
-    "ourProducts": "Nuestros Productos",
-    "ourProductsDesc": "Fabricamos una amplia gama de drivers LED diseñados para diferentes aplicaciones y necesidades específicas.",
-    "viewCatalog": "Ver Catálogo Completo",
-    "mainApplications": "Aplicaciones Principales",
+    "whyChoose": {
+      "title": "¿Por qué elegir GXTRONIC?",
+      "description": "Ofrecemos soluciones completas en drivers LED con la más alta calidad y tecnología"
+    },
+    "products": {
+      "title": "Nuestros Productos",
+      "description": "Fabricamos una amplia gama de drivers LED diseñados para diferentes aplicaciones y necesidades específicas.",
+      "viewCatalog": "Ver Catálogo Completo",
+      "chips": {
+        "dimmable": "Drivers Dimables",
+        "highPower": "Alta Potencia",
+        "industrial": "Uso Industrial",
+        "certified": "Certificados"
+      }
+    },
+    "applications": {
+      "title": "Aplicaciones Principales",
+      "commercial": "Iluminación comercial",
+      "publicLighting": "Alumbrado público",
+      "industrial": "Aplicaciones industriales",
+      "architectural": "Proyectos arquitectónicos",
+      "emergency": "Sistemas de emergencia"
+    },
     "features": {
       "design": {
         "title": "Diseño Avanzado",
@@ -37,19 +54,6 @@
         "title": "Soporte Técnico",
         "description": "Equipo de soporte técnico especializado para asesoramiento y resolución de dudas."
       }
-    },
-    "applications": [
-      "Iluminación comercial",
-      "Alumbrado público",
-      "Aplicaciones industriales",
-      "Proyectos arquitectónicos",
-      "Sistemas de emergencia"
-    ],
-    "chips": {
-      "dimmable": "Drivers Dimables",
-      "highPower": "Alta Potencia",
-      "industrial": "Uso Industrial",
-      "certified": "Certificados"
     }
   },
   "products": {
