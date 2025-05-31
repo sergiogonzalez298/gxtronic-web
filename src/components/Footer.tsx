@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import {
   Email,
-  Phone,
   LocationOn,
   LinkedIn,
   Facebook,
@@ -34,37 +33,35 @@ export default function Footer() {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom sx={{ textAlign: { xs: 'center', md: 'left' } }}>
               GXTRONIC
             </Typography>
-            <Typography variant="body2" sx={{ mb: 2 }}>
+            <Typography variant="body2" sx={{ mb: 2, textAlign: { xs: 'center', md: 'left' } }}>
               {t('description')}
             </Typography>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom sx={{ textAlign: { xs: 'center', md: 'left' } }}>
               {t('contact')}
             </Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-              <Email sx={{ mr: 1, fontSize: 20 }} />
-              <Link color="inherit" href="mailto:info@gxtronic.com">
-                {tContact('email.content')}
-              </Link>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-              <Phone sx={{ mr: 1, fontSize: 20 }} />
-              <Typography variant="body2">{tContact('phone.content')}</Typography>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <LocationOn sx={{ mr: 1, fontSize: 20 }} />
-              <Typography variant="body2">{tContact('location.content')}</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-start' } }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                <Email sx={{ mr: 1, fontSize: 20 }} />
+                <Link color="inherit" href="mailto:info@gxtronic.com">
+                  {tContact('email.content')}
+                </Link>
+              </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <LocationOn sx={{ mr: 1, fontSize: 20 }} />
+                <Typography variant="body2">{tContact('location.content')}</Typography>
+              </Box>
             </Box>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom sx={{ textAlign: { xs: 'center', md: 'left' } }}>
               {t('followUs')}
             </Typography>
-            <Box>
+            <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-start' } }}>
               <IconButton color="inherit" size="small">
                 <LinkedIn />
               </IconButton>

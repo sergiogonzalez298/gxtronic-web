@@ -16,10 +16,10 @@ import {
 import Grid from '@mui/material/Grid2';
 import {
   Email,
-  Phone,
   LocationOn,
   AccessTime,
   Business,
+  Support,
 } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
@@ -34,12 +34,6 @@ export default function ContactoPage() {
       title: tInfo('email.title'),
       content: tInfo('email.content'),
       subtitle: tInfo('email.subtitle'),
-    },
-    {
-      icon: <Phone fontSize="large" />,
-      title: tInfo('phone.title'),
-      content: tInfo('phone.content'),
-      subtitle: tInfo('phone.subtitle'),
     },
     {
       icon: <LocationOn fontSize="large" />,
@@ -60,7 +54,6 @@ export default function ContactoPage() {
     nombre: '',
     empresa: '',
     email: '',
-    telefono: '',
     tipoConsulta: '',
     mensaje: '',
   });
@@ -138,14 +131,6 @@ export default function ContactoPage() {
                         value={formData.email}
                         onChange={handleChange('email')}
                         required
-                      />
-                    </Grid>
-                    <Grid size={{ xs: 12, sm: 6 }}>
-                      <TextField
-                        fullWidth
-                        label={t('form.phone')}
-                        value={formData.telefono}
-                        onChange={handleChange('telefono')}
                       />
                     </Grid>
                     <Grid size={{ xs: 12 }}>
@@ -248,7 +233,7 @@ export default function ContactoPage() {
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>
               <Box sx={{ textAlign: 'center' }}>
-                <Phone color="primary" sx={{ fontSize: 48, mb: 2 }} />
+                <Support color="primary" sx={{ fontSize: 48, mb: 2 }} />
                 <Typography variant="h6" gutterBottom>
                   {t('reasons.support.title')}
                 </Typography>
@@ -272,31 +257,6 @@ export default function ContactoPage() {
         </Container>
       </Box>
 
-      <Box sx={{ bgcolor: 'primary.main', color: 'white', py: 6 }}>
-        <Container maxWidth="lg">
-          <Grid container spacing={4} alignItems="center">
-            <Grid size={{ xs: 12, md: 8 }}>
-              <Typography variant="h5" gutterBottom>
-                {t('urgentTitle')}
-              </Typography>
-              <Typography variant="body1" sx={{ opacity: 0.9 }}>
-                {t('urgentDescription')}
-              </Typography>
-            </Grid>
-            <Grid size={{ xs: 12, md: 4 }}>
-              <Button
-                variant="contained"
-                color="secondary"
-                size="large"
-                fullWidth
-                startIcon={<Phone />}
-              >
-                {tInfo('phone.content')}
-              </Button>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
     </Box>
   );
 }
