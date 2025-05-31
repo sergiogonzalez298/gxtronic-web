@@ -2,10 +2,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
-import {Box} from "@mui/material";
-import ThemeProvider from "@/components/ThemeProvider";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import ClientLayout from "@/components/ClientLayout";
  
 export default async function LocaleLayout({
   children,
@@ -29,15 +26,9 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
-            <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-              <Header />
-              <Box component="main" sx={{ flexGrow: 1 }}>
-                {children}
-              </Box>
-              <Footer />
-            </Box>
-          </ThemeProvider>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
         </NextIntlClientProvider>
       </body>
     </html>
