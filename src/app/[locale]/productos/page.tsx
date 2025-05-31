@@ -20,68 +20,61 @@ import {
 } from '@mui/icons-material';
 import { useTranslations } from 'next-intl';
 
-const products = [
-  {
-    id: 1,
-    name: 'Driver LED 24V - 60W',
-    category: 'Potencia Media',
-    image: '/api/placeholder/300/200',
-    features: ['Dimable', '24V DC', '60W', 'IP67'],
-    description: 'Driver LED de potencia media ideal para aplicaciones comerciales y residenciales.',
-    specifications: {
-      voltage: '24V DC',
-      power: '60W',
-      efficiency: '>90%',
-      protection: 'IP67',
-    },
-  },
-  {
-    id: 2,
-    name: 'Driver LED 48V - 150W',
-    category: 'Alta Potencia',
-    image: '/api/placeholder/300/200',
-    features: ['Dimable', '48V DC', '150W', 'IP65'],
-    description: 'Driver de alta potencia para aplicaciones industriales y alumbrado público.',
-    specifications: {
-      voltage: '48V DC',
-      power: '150W',
-      efficiency: '>92%',
-      protection: 'IP65',
-    },
-  },
-  {
-    id: 3,
-    name: 'Driver LED 12V - 30W',
-    category: 'Baja Potencia',
-    image: '/api/placeholder/300/200',
-    features: ['Compacto', '12V DC', '30W', 'IP20'],
-    description: 'Solución compacta para aplicaciones de interior y decorativas.',
-    specifications: {
-      voltage: '12V DC',
-      power: '30W',
-      efficiency: '>88%',
-      protection: 'IP20',
-    },
-  },
-  {
-    id: 4,
-    name: 'Driver LED 24V - 100W Industrial',
-    category: 'Industrial',
-    image: '/api/placeholder/300/200',
-    features: ['Robusto', '24V DC', '100W', 'IP68'],
-    description: 'Driver industrial resistente para entornos exigentes y condiciones adversas.',
-    specifications: {
-      voltage: '24V DC',
-      power: '100W',
-      efficiency: '>94%',
-      protection: 'IP68',
-    },
-  },
-];
 
 
 export default function ProductosPage() {
   const t = useTranslations('products');
+  
+  const getLocalizedProducts = () => [
+    {
+      id: 1,
+      name: 'GXTronic 24V 100W',
+      category: t('categoryTypes.mediumPower.name'),
+      reference: '91885',
+      image: '/api/placeholder/300/200',
+      features: ['Tecnología GaN', 'Refrigeración natural', 'Dimable manual', 'Silencioso'],
+      description: 'Fuente de alimentación compacta con tecnología de nitruro de galio (GaN) para instalaciones de tiras LED.',
+      specifications: {
+        voltage: '24V DC',
+        power: '100W',
+        amperage: '4.1A',
+        protection: 'IP20',
+        dimming: '1-100%, 2-50%, 3-20%, 4-10%',
+      },
+    },
+    {
+      id: 2,
+      name: 'GXTronic 24V 200W',
+      category: t('categoryTypes.highPower.name'),
+      reference: '91887',
+      image: '/api/placeholder/300/200',
+      features: ['Tecnología GaN', 'Diseño compacto', 'Alta eficiencia', 'Refrigeración natural'],
+      description: 'Fuente de alimentación de alta potencia con tecnología GaN para aplicaciones profesionales.',
+      specifications: {
+        voltage: '24V DC',
+        power: '200W',
+        amperage: '8.3A',
+        protection: 'IP20',
+        cooling: 'Convección natural',
+      },
+    },
+    {
+      id: 3,
+      name: 'GXTronic 24V 400W',
+      category: t('categoryTypes.highPower.name'),
+      reference: '91889',
+      image: '/api/placeholder/300/200',
+      features: ['Tecnología GaN', 'Máxima potencia', 'Diseño robusto', 'Alta eficiencia'],
+      description: 'Fuente de alimentación de máxima potencia para instalaciones LED de gran escala.',
+      specifications: {
+        voltage: '24V DC',
+        power: '400W',
+        amperage: '16.6A',
+        protection: 'IP20',
+        cooling: 'Convección natural',
+      },
+    },
+  ];
   
   const categories = [
     {
@@ -156,7 +149,7 @@ export default function ProductosPage() {
           {t('catalog')}
         </Typography>
         <Grid container spacing={4}>
-          {products.map((product) => (
+          {getLocalizedProducts().map((product) => (
             <Grid item xs={12} md={6} key={product.id}>
               <Card sx={{ height: '100%' }}>
                 <CardMedia
@@ -173,7 +166,7 @@ export default function ProductosPage() {
                   </Typography>
                 </CardMedia>
                 <CardContent>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
                     <Typography variant="h6">{product.name}</Typography>
                     <Chip
                       label={product.category}
@@ -182,6 +175,11 @@ export default function ProductosPage() {
                       variant="outlined"
                     />
                   </Box>
+                  {product.reference && (
+                    <Typography variant="caption" color="text.secondary" sx={{ mb: 2, display: 'block' }}>
+                      Ref: {product.reference}
+                    </Typography>
+                  )}
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                     {product.description}
                   </Typography>
@@ -202,26 +200,19 @@ export default function ProductosPage() {
                       {t('specifications')}
                     </Typography>
                     <Grid container spacing={1}>
-                      <Grid item xs={6}>
-                        <Typography variant="caption" color="text.secondary">
-                          Voltaje: {product.specifications.voltage}
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={6}>
-                        <Typography variant="caption" color="text.secondary">
-                          Potencia: {product.specifications.power}
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={6}>
-                        <Typography variant="caption" color="text.secondary">
-                          Eficiencia: {product.specifications.efficiency}
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={6}>
-                        <Typography variant="caption" color="text.secondary">
-                          Protección: {product.specifications.protection}
-                        </Typography>
-                      </Grid>
+                      {Object.entries(product.specifications).map(([key, value], index) => (
+                        <Grid item xs={6} key={index}>
+                          <Typography variant="caption" color="text.secondary">
+                            {key === 'voltage' && 'Voltaje: '}
+                            {key === 'power' && 'Potencia: '}
+                            {key === 'amperage' && 'Amperaje: '}
+                            {key === 'protection' && 'Protección: '}
+                            {key === 'dimming' && 'Dimming: '}
+                            {key === 'cooling' && 'Refrigeración: '}
+                            {value}
+                          </Typography>
+                        </Grid>
+                      ))}
                     </Grid>
                   </Box>
 
