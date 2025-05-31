@@ -68,6 +68,17 @@
     "specifications": "Especificaciones:",
     "features": "Características:",
     "productImage": "Imagen del Producto",
+    "productFeatures": {
+      "ganTechnology": "Tecnología GaN",
+      "naturalCooling": "Refrigeración natural",
+      "manualDimming": "Dimable manual",
+      "silent": "Silencioso",
+      "compactDesign": "Diseño compacto",
+      "highEfficiency": "Alta eficiencia",
+      "robustDesign": "Diseño robusto",
+      "maxPower": "Máxima potencia",
+      "efficient": "Eficiente"
+    },
     "categoryTypes": {
       "lowPower": {
         "name": "Baja Potencia",

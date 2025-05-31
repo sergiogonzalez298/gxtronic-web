@@ -74,7 +74,18 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Link href="/contacto" style={{ textDecoration: 'none' }}>
-                  <Button variant="outlined" color="inherit" size="large">
+                  <Button 
+                    variant="outlined" 
+                    size="large"
+                    sx={{
+                      color: 'white',
+                      borderColor: 'white',
+                      '&:hover': {
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        borderColor: 'white'
+                      }
+                    }}
+                  >
                     {t('contact')}
                   </Button>
                 </Link>
