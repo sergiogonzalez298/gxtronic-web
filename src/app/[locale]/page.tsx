@@ -17,6 +17,7 @@ import {
   Support,
 } from '@mui/icons-material';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 export default function Home() {
   const t = useTranslations('home');
@@ -67,12 +68,16 @@ export default function Home() {
                 {t('description')}
               </Typography>
               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                <Button variant="contained" color="secondary" size="large">
-                  {t('viewProducts')}
-                </Button>
-                <Button variant="outlined" color="inherit" size="large">
-                  {t('contact')}
-                </Button>
+                <Link href="/productos" style={{ textDecoration: 'none' }}>
+                  <Button variant="contained" color="secondary" size="large">
+                    {t('viewProducts')}
+                  </Button>
+                </Link>
+                <Link href="/contacto" style={{ textDecoration: 'none' }}>
+                  <Button variant="outlined" color="inherit" size="large">
+                    {t('contact')}
+                  </Button>
+                </Link>
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -141,9 +146,11 @@ export default function Home() {
                 <Chip label={t('products.chips.industrial')} />
                 <Chip label={t('products.chips.certified')} />
               </Box>
-              <Button variant="contained" size="large">
-                {t('products.viewCatalog')}
-              </Button>
+              <Link href="/productos" style={{ textDecoration: 'none' }}>
+                <Button variant="contained" size="large">
+                  {t('products.viewCatalog')}
+                </Button>
+              </Link>
             </Grid>
             <Grid item xs={12} md={6}>
               <Box

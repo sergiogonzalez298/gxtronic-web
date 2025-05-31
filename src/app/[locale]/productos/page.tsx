@@ -4,7 +4,6 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
   Card,
   CardContent,
   CardMedia,
@@ -12,6 +11,7 @@ import {
   Button,
   Divider,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import {
   Power,
   Lightbulb,
@@ -19,6 +19,7 @@ import {
   Security,
 } from '@mui/icons-material';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 
 
@@ -31,7 +32,7 @@ export default function ProductosPage() {
       name: 'GXTronic 24V 100W',
       category: t('categoryTypes.mediumPower.name'),
       reference: '91885',
-      image: '/api/placeholder/300/200',
+      image: '/images/products/gxtronic-24v-100w.jpg',
       features: ['Tecnología GaN', 'Refrigeración natural', 'Dimable manual', 'Silencioso'],
       description: 'Fuente de alimentación compacta con tecnología de nitruro de galio (GaN) para instalaciones de tiras LED.',
       specifications: {
@@ -47,7 +48,7 @@ export default function ProductosPage() {
       name: 'GXTronic 24V 200W',
       category: t('categoryTypes.highPower.name'),
       reference: '91887',
-      image: '/api/placeholder/300/200',
+      image: '/images/products/gxtronic-24v-200w.jpg',
       features: ['Tecnología GaN', 'Diseño compacto', 'Alta eficiencia', 'Refrigeración natural'],
       description: 'Fuente de alimentación de alta potencia con tecnología GaN para aplicaciones profesionales.',
       specifications: {
@@ -63,7 +64,7 @@ export default function ProductosPage() {
       name: 'GXTronic 24V 400W',
       category: t('categoryTypes.highPower.name'),
       reference: '91889',
-      image: '/api/placeholder/300/200',
+      image: '/images/products/gxtronic-24v-400w.jpg',
       features: ['Tecnología GaN', 'Máxima potencia', 'Diseño robusto', 'Alta eficiencia'],
       description: 'Fuente de alimentación de máxima potencia para instalaciones LED de gran escala.',
       specifications: {
@@ -125,7 +126,7 @@ export default function ProductosPage() {
         </Typography>
         <Grid container spacing={3} sx={{ mb: 6 }}>
           {categories.map((category, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
               <Card sx={{ height: '100%', textAlign: 'center' }}>
                 <CardContent>
                   <Box sx={{ color: 'primary.main', mb: 2 }}>
@@ -150,21 +151,19 @@ export default function ProductosPage() {
         </Typography>
         <Grid container spacing={4}>
           {getLocalizedProducts().map((product) => (
-            <Grid item xs={12} md={6} key={product.id}>
+            <Grid size={{ xs: 12, md: 6 }} key={product.id}>
               <Card sx={{ height: '100%' }}>
                 <CardMedia
+                  component="img"
+                  height="200"
+                  image={product.image}
+                  alt={product.name}
                   sx={{
-                    height: 200,
-                    bgcolor: 'grey.100',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    objectFit: 'contain',
+                    bgcolor: 'grey.50',
+                    p: 2,
                   }}
-                >
-                  <Typography variant="h6" color="text.secondary">
-                    {t('productImage')}
-                  </Typography>
-                </CardMedia>
+                />
                 <CardContent>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
                     <Typography variant="h6">{product.name}</Typography>
@@ -201,7 +200,7 @@ export default function ProductosPage() {
                     </Typography>
                     <Grid container spacing={1}>
                       {Object.entries(product.specifications).map(([key, value], index) => (
-                        <Grid item xs={6} key={index}>
+                        <Grid size={{ xs: 6 }} key={index}>
                           <Typography variant="caption" color="text.secondary">
                             {key === 'voltage' && 'Voltaje: '}
                             {key === 'power' && 'Potencia: '}
@@ -216,9 +215,11 @@ export default function ProductosPage() {
                     </Grid>
                   </Box>
 
-                  <Button variant="contained" fullWidth>
-                    {t('requestInfo')}
-                  </Button>
+                  <Link href="/contacto" style={{ textDecoration: 'none' }}>
+                    <Button variant="contained" fullWidth>
+                      {t('requestInfo')}
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </Grid>
@@ -229,7 +230,7 @@ export default function ProductosPage() {
       <Box sx={{ bgcolor: 'grey.50', py: 6 }}>
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={8}>
+            <Grid size={{ xs: 12, md: 8 }}>
               <Typography variant="h5" gutterBottom>
                 {t('customDriver')}
               </Typography>
@@ -237,10 +238,12 @@ export default function ProductosPage() {
                 {t('customDriverDesc')}
               </Typography>
             </Grid>
-            <Grid item xs={12} md={4}>
-              <Button variant="contained" size="large" fullWidth>
-                {t('contactSpecialist')}
-              </Button>
+            <Grid size={{ xs: 12, md: 4 }}>
+              <Link href="/contacto" style={{ textDecoration: 'none' }}>
+                <Button variant="contained" size="large" fullWidth>
+                  {t('contactSpecialist')}
+                </Button>
+              </Link>
             </Grid>
           </Grid>
         </Container>
