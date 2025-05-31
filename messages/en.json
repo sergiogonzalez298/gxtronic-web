@@ -196,7 +196,11 @@
     "whyChoose": "Why choose GXTRONIC?",
     "immediateResponse": "Need an immediate response?",
     "immediateResponseDesc": "For urgent inquiries or immediate technical support, call us directly during business hours.",
+    "urgentTitle": "Need an immediate response?",
+    "urgentDescription": "For urgent inquiries or immediate technical support, call us directly during business hours.",
     "form": {
+      "title": "Send us your inquiry",
+      "description": "Complete the form and our technical team will contact you",
       "fullName": "Full name",
       "company": "Company",
       "email": "Email",

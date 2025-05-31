@@ -196,7 +196,11 @@
     "whyChoose": "¿Por qué elegir GXTRONIC?",
     "immediateResponse": "¿Necesitas una respuesta inmediata?",
     "immediateResponseDesc": "Para consultas urgentes o soporte técnico inmediato, llámanos directamente durante horario comercial.",
+    "urgentTitle": "¿Necesitas una respuesta inmediata?",
+    "urgentDescription": "Para consultas urgentes o soporte técnico inmediato, llámanos directamente durante horario comercial.",
     "form": {
+      "title": "Envíanos tu consulta",
+      "description": "Completa el formulario y nuestro equipo técnico se pondrá en contacto contigo",
       "fullName": "Nombre completo",
       "company": "Empresa",
       "email": "Email",
