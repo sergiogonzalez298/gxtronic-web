@@ -24,82 +24,86 @@ import {
   Assignment,
   ExpandMore,
 } from '@mui/icons-material';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
-const services = [
-  {
-    title: 'Desarrollo Personalizado',
-    icon: <Build fontSize="large" />,
-    description: 'Diseñamos y fabricamos drivers LED personalizados según tus especificaciones.',
-    features: [
-      'Análisis de requisitos técnicos',
-      'Diseño de circuitos optimizados',
-      'Prototipado y testing',
-      'Certificación y homologación',
-      'Producción en serie',
-    ],
-  },
-  {
-    title: 'Soporte Técnico',
-    icon: <Support fontSize="large" />,
-    description: 'Equipo especializado para resolver dudas técnicas y problemas de implementación.',
-    features: [
-      'Consultoría técnica especializada',
-      'Resolución de problemas',
-      'Optimización de sistemas',
-      'Actualizaciones de firmware',
-      'Soporte 24/7 para clientes premium',
-    ],
-  },
-  {
-    title: 'Instalación y Puesta en Marcha',
-    icon: <Speed fontSize="large" />,
-    description: 'Servicios completos de instalación y configuración para proyectos grandes.',
-    features: [
-      'Planificación de instalación',
-      'Configuración en sitio',
-      'Pruebas de funcionamiento',
-      'Capacitación del personal',
-      'Documentación técnica',
-    ],
-  },
-  {
-    title: 'Mantenimiento Preventivo',
-    icon: <Assignment fontSize="large" />,
-    description: 'Programas de mantenimiento para garantizar el óptimo funcionamiento.',
-    features: [
-      'Inspecciones periódicas',
-      'Limpieza y calibración',
-      'Reemplazo de componentes',
-      'Informes de estado',
-      'Garantía extendida',
-    ],
-  },
-];
+export default function ServicesPage() {
+  const t = useTranslations('services');
+  
+  const services = [
+    {
+      title: t('serviceTypes.customDevelopment.title'),
+      icon: <Build fontSize="large" />,
+      description: t('serviceTypes.customDevelopment.description'),
+      features: [
+        'Technical requirements analysis',
+        'Optimized circuit design',
+        'Prototyping and testing',
+        'Certification and approval',
+        'Series production',
+      ],
+    },
+    {
+      title: t('serviceTypes.technicalSupport.title'),
+      icon: <Support fontSize="large" />,
+      description: t('serviceTypes.technicalSupport.description'),
+      features: [
+        'Specialized technical consulting',
+        'Problem solving',
+        'System optimization',
+        'Firmware updates',
+        '24/7 support for premium clients',
+      ],
+    },
+    {
+      title: t('serviceTypes.installation.title'),
+      icon: <Speed fontSize="large" />,
+      description: t('serviceTypes.installation.description'),
+      features: [
+        'Installation planning',
+        'On-site configuration',
+        'Functionality testing',
+        'Staff training',
+        'Technical documentation',
+      ],
+    },
+    {
+      title: t('serviceTypes.maintenance.title'),
+      icon: <Assignment fontSize="large" />,
+      description: t('serviceTypes.maintenance.description'),
+      features: [
+        'Periodic inspections',
+        'Cleaning and calibration',
+        'Component replacement',
+        'Status reports',
+        'Extended warranty',
+      ],
+    },
+  ];
 
-const faqs = [
-  {
-    question: '¿Qué garantía ofrecen en sus productos?',
-    answer: 'Ofrecemos 3 años de garantía en todos nuestros drivers LED estándar y hasta 5 años en productos industriales. La garantía cubre defectos de fabricación y mal funcionamiento bajo condiciones normales de uso.',
-  },
-  {
-    question: '¿Realizan envíos internacionales?',
-    answer: 'Sí, realizamos envíos a toda Europa y América. Los tiempos de entrega varían según el destino, generalmente entre 3-7 días laborables en Europa y 7-14 días en América.',
-  },
-  {
-    question: '¿Pueden desarrollar drivers con especificaciones particulares?',
-    answer: 'Absolutamente. Contamos con un equipo de ingeniería especializado que puede desarrollar drivers personalizados según sus requerimientos específicos. El tiempo de desarrollo típico es de 4-8 semanas.',
-  },
-  {
-    question: '¿Qué certificaciones tienen sus productos?',
-    answer: 'Todos nuestros productos cuentan con certificación CE, RoHS y la mayoría también tienen certificación UL. Para aplicaciones específicas, podemos obtener certificaciones adicionales según sea necesario.',
-  },
-  {
-    question: '¿Ofrecen capacitación técnica?',
-    answer: 'Sí, ofrecemos programas de capacitación técnica tanto presenciales como virtuales. Incluyen instalación, configuración, mantenimiento y solución de problemas.',
-  },
-];
+  const faqs = [
+    {
+      question: 'What warranty do you offer on your products?',
+      answer: 'We offer 3 years warranty on all our standard LED drivers and up to 5 years on industrial products. The warranty covers manufacturing defects and malfunction under normal use conditions.',
+    },
+    {
+      question: 'Do you make international shipments?',
+      answer: 'Yes, we ship throughout Asia and internationally. Delivery times vary depending on destination, generally between 3-7 business days in Asia and 7-14 days internationally.',
+    },
+    {
+      question: 'Can you develop drivers with particular specifications?',
+      answer: 'Absolutely. We have a specialized engineering team that can develop custom drivers according to your specific requirements. Typical development time is 4-8 weeks.',
+    },
+    {
+      question: 'What certifications do your products have?',
+      answer: 'All our products have CE, RoHS certification and most also have UL certification. For specific applications, we can obtain additional certifications as needed.',
+    },
+    {
+      question: 'Do you offer technical training?',
+      answer: 'Yes, we offer both in-person and virtual technical training programs. They include installation, configuration, maintenance and troubleshooting.',
+    },
+  ];
 
-export default function ServiciosPage() {
   return (
     <Box>
       <Box
@@ -112,10 +116,10 @@ export default function ServiciosPage() {
       >
         <Container maxWidth="lg">
           <Typography variant="h2" gutterBottom>
-            Nuestros Servicios
+            {t('title')}
           </Typography>
           <Typography variant="h6" sx={{ opacity: 0.9 }}>
-            Soluciones completas para todas tus necesidades en drivers LED
+            {t('subtitle')}
           </Typography>
         </Container>
       </Box>
@@ -155,10 +159,10 @@ export default function ServiciosPage() {
       <Box sx={{ bgcolor: 'grey.50', py: 6 }}>
         <Container maxWidth="lg">
           <Typography variant="h4" align="center" gutterBottom>
-            Proceso de Trabajo
+            {t('workProcess')}
           </Typography>
           <Typography variant="body1" align="center" sx={{ mb: 4, color: 'text.secondary' }}>
-            Así es como trabajamos contigo para entregar la mejor solución
+            {t('workProcessDesc')}
           </Typography>
           
           <Grid container spacing={4}>
@@ -181,10 +185,10 @@ export default function ServiciosPage() {
                   <Typography variant="h4">1</Typography>
                 </Box>
                 <Typography variant="h6" gutterBottom>
-                  Consulta
+                  {t('workSteps.consultation.title')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Analizamos tus necesidades y requerimientos específicos
+                  {t('workSteps.consultation.description')}
                 </Typography>
               </Box>
             </Grid>
@@ -207,10 +211,10 @@ export default function ServiciosPage() {
                   <Typography variant="h4">2</Typography>
                 </Box>
                 <Typography variant="h6" gutterBottom>
-                  Propuesta
+                  {t('workSteps.proposal.title')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Desarrollamos una propuesta técnica y comercial personalizada
+                  {t('workSteps.proposal.description')}
                 </Typography>
               </Box>
             </Grid>
@@ -233,10 +237,10 @@ export default function ServiciosPage() {
                   <Typography variant="h4">3</Typography>
                 </Box>
                 <Typography variant="h6" gutterBottom>
-                  Desarrollo
+                  {t('workSteps.development.title')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Fabricamos y testemos la solución según especificaciones
+                  {t('workSteps.development.description')}
                 </Typography>
               </Box>
             </Grid>
@@ -259,10 +263,10 @@ export default function ServiciosPage() {
                   <Typography variant="h4">4</Typography>
                 </Box>
                 <Typography variant="h6" gutterBottom>
-                  Entrega
+                  {t('workSteps.delivery.title')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Instalación, puesta en marcha y soporte continuo
+                  {t('workSteps.delivery.description')}
                 </Typography>
               </Box>
             </Grid>
@@ -272,10 +276,10 @@ export default function ServiciosPage() {
 
       <Container maxWidth="lg" sx={{ py: 6 }}>
         <Typography variant="h4" align="center" gutterBottom>
-          Preguntas Frecuentes
+          {t('faq')}
         </Typography>
         <Typography variant="body1" align="center" sx={{ mb: 4, color: 'text.secondary' }}>
-          Respuestas a las consultas más comunes sobre nuestros servicios
+          {t('faqDesc')}
         </Typography>
         
         <Box sx={{ maxWidth: 800, mx: 'auto' }}>
@@ -297,22 +301,23 @@ export default function ServiciosPage() {
           <Grid container spacing={4} alignItems="center">
             <Grid size={{ xs: 12, md: 8 }}>
               <Typography variant="h4" gutterBottom>
-                ¿Listo para empezar tu proyecto?
+                {t('readyToStart')}
               </Typography>
               <Typography variant="body1" sx={{ opacity: 0.9 }}>
-                Contacta con nuestro equipo técnico para una consulta gratuita 
-                y descubre cómo podemos ayudarte.
+                {t('readyToStartDesc')}
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>
-              <Button
-                variant="contained"
-                color="secondary"
-                size="large"
-                fullWidth
-              >
-                Solicitar Consulta
-              </Button>
+              <Link href="/contact" style={{ textDecoration: 'none' }}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="large"
+                  fullWidth
+                >
+                  {t('requestConsultation')}
+                </Button>
+              </Link>
             </Grid>
           </Grid>
         </Container>

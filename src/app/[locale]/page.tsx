@@ -18,9 +18,19 @@ import {
 } from '@mui/icons-material';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const t = useTranslations('home');
+  const [scrollY, setScrollY] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   const features = [
     {
@@ -49,13 +59,40 @@ export default function Home() {
     <Box>
       <Box
         sx={{
-          bgcolor: 'primary.main',
+          position: 'relative',
           color: 'white',
           py: 8,
-          background: 'linear-gradient(135deg, #1976d2 0%, #115293 100%)',
+          overflow: 'hidden',
+          minHeight: '60vh',
         }}
       >
-        <Container maxWidth="lg">
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: 'url(/images/city/shanghai-night-1.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: mounted ? `translateY(${scrollY * -0.5}px)` : 'none',
+            filter: 'brightness(0.7)',
+            zIndex: 0,
+          }}
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(25, 118, 210, 0.6) 0%, rgba(17, 82, 147, 0.7) 100%)',
+            zIndex: 1,
+          }}
+        />
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
           <Grid container spacing={4} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
               <Typography variant="h1" gutterBottom>
@@ -68,12 +105,12 @@ export default function Home() {
                 {t('description')}
               </Typography>
               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                <Link href="/productos" style={{ textDecoration: 'none' }}>
+                <Link href="/products" style={{ textDecoration: 'none' }}>
                   <Button variant="contained" color="secondary" size="large">
                     {t('viewProducts')}
                   </Button>
                 </Link>
-                <Link href="/contacto" style={{ textDecoration: 'none' }}>
+                <Link href="/contact" style={{ textDecoration: 'none' }}>
                   <Button 
                     variant="outlined" 
                     size="large"
@@ -141,8 +178,40 @@ export default function Home() {
         </Grid>
       </Container>
 
-      <Box sx={{ bgcolor: 'grey.50', py: 8 }}>
-        <Container maxWidth="lg">
+      <Box 
+        sx={{ 
+          position: 'relative',
+          py: 8,
+          overflow: 'hidden',
+        }}
+      >
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: 'url(/images/city/shanghai-night-2.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: mounted ? `translateY(${scrollY * -0.3}px)` : 'none',
+            filter: 'brightness(1)',
+            zIndex: 0,
+          }}
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(255, 255, 255, 0.7)',
+            zIndex: 1,
+          }}
+        />
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
           <Grid container spacing={4} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
               <Typography variant="h3" gutterBottom>
@@ -157,7 +226,7 @@ export default function Home() {
                 <Chip label={t('products.chips.industrial')} />
                 <Chip label={t('products.chips.certified')} />
               </Box>
-              <Link href="/productos" style={{ textDecoration: 'none' }}>
+              <Link href="/products" style={{ textDecoration: 'none' }}>
                 <Button variant="contained" size="large">
                   {t('products.viewCatalog')}
                 </Button>

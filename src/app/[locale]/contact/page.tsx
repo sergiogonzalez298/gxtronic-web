@@ -23,6 +23,7 @@ import {
 } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 export default function ContactoPage() {
   const t = useTranslations('contact');
@@ -51,12 +52,16 @@ export default function ContactoPage() {
 
   const [mounted, setMounted] = useState(false);
   const [formData, setFormData] = useState({
-    nombre: '',
-    empresa: '',
+    fullName: '',
+    company: '',
     email: '',
-    tipoConsulta: '',
-    mensaje: '',
+    queryType: '',
+    message: '',
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -66,9 +71,48 @@ export default function ContactoPage() {
     setFormData({ ...formData, [field]: event.target.value });
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    if (!captchaToken) {
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          captchaToken,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          fullName: '',
+          company: '',
+          email: '',
+          queryType: '',
+          message: '',
+        });
+        setCaptchaToken(null);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -110,8 +154,8 @@ export default function ContactoPage() {
                       <TextField
                         fullWidth
                         label={t('form.fullName')}
-                        value={formData.nombre}
-                        onChange={handleChange('nombre')}
+                        value={formData.fullName}
+                        onChange={handleChange('fullName')}
                         required
                       />
                     </Grid>
@@ -119,8 +163,8 @@ export default function ContactoPage() {
                       <TextField
                         fullWidth
                         label={t('form.company')}
-                        value={formData.empresa}
-                        onChange={handleChange('empresa')}
+                        value={formData.company}
+                        onChange={handleChange('company')}
                       />
                     </Grid>
                     <Grid size={{ xs: 12, sm: 6 }}>
@@ -138,8 +182,8 @@ export default function ContactoPage() {
                       <FormControl fullWidth>
                         <InputLabel>{t('form.queryType')}</InputLabel>
                         <Select
-                          value={formData.tipoConsulta}
-                          onChange={handleChange('tipoConsulta')}
+                          value={formData.queryType}
+                          onChange={handleChange('queryType')}
                           label={t('form.queryType')}
                           required
                         >
@@ -158,20 +202,45 @@ export default function ContactoPage() {
                         label={t('form.message')}
                         multiline
                         rows={4}
-                        value={formData.mensaje}
-                        onChange={handleChange('mensaje')}
+                        value={formData.message}
+                        onChange={handleChange('message')}
                         placeholder={t('form.messagePlaceholder')}
                         required
                       />
                     </Grid>
                     <Grid size={{ xs: 12 }}>
+                      <HCaptcha
+                        sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY || '10000000-ffff-ffff-ffff-000000000001'}
+                        onVerify={(token) => setCaptchaToken(token)}
+                        onExpire={() => setCaptchaToken(null)}
+                        onError={() => setCaptchaToken(null)}
+                      />
+                    </Grid>
+                    <Grid size={{ xs: 12 }}>
+                      {submitStatus === 'success' && (
+                        <Box sx={{ p: 2, bgcolor: 'success.light', borderRadius: 1, mb: 2 }}>
+                          <Typography color="success.dark">
+                            Thank you! Your message has been sent successfully. We&apos;ll get back to you soon.
+                          </Typography>
+                        </Box>
+                      )}
+                      
+                      {submitStatus === 'error' && (
+                        <Box sx={{ p: 2, bgcolor: 'error.light', borderRadius: 1, mb: 2 }}>
+                          <Typography color="error.dark">
+                            Sorry, there was an error sending your message. Please try again.
+                          </Typography>
+                        </Box>
+                      )}
+                      
                       <Button
                         type="submit"
                         variant="contained"
                         size="large"
                         sx={{ mt: 2 }}
+                        disabled={isSubmitting || !captchaToken}
                       >
-                        {t('form.submit')}
+                        {isSubmitting ? 'Sending...' : t('form.submit')}
                       </Button>
                     </Grid>
                     </Grid>

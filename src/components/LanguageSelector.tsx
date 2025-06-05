@@ -16,8 +16,8 @@ import {
 } from '@mui/icons-material';
 
 const languages = [
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'en', name: 'English', flag: '🇺🇸' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' },
 ];
 
 export default function LanguageSelector() {

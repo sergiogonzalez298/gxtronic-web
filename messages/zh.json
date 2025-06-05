@@ -1,0 +1,291 @@
+{
+  "navigation": {
+    "home": "首页",
+    "products": "产品",
+    "services": "服务",
+    "about": "关于我们",
+    "contact": "联系我们"
+  },
+  "home": {
+    "title": "GXTRONIC",
+    "subtitle": "LED驱动器制造商",
+    "description": "专业生产工业和商业应用的高品质LED驱动器。创新解决方案确保效率、耐用性和最佳性能。",
+    "viewProducts": "查看产品",
+    "contact": "联系我们",
+    "ledDrivers": "LED驱动器",
+    "ledDriversDesc": "专业照明的先进技术",
+    "whyChoose": {
+      "title": "为什么选择GXTRONIC？",
+      "description": "我们提供最高品质和技术的完整LED驱动器解决方案"
+    },
+    "products": {
+      "title": "我们的产品",
+      "description": "我们生产各种LED驱动器，专为不同应用和特定需求而设计。",
+      "viewCatalog": "查看完整目录",
+      "chips": {
+        "dimmable": "可调光驱动器",
+        "highPower": "大功率",
+        "industrial": "工业用途",
+        "certified": "认证产品"
+      }
+    },
+    "applications": {
+      "title": "主要应用",
+      "commercial": "商业照明",
+      "publicLighting": "公共照明",
+      "industrial": "工业应用",
+      "architectural": "建筑项目",
+      "emergency": "应急系统"
+    },
+    "features": {
+      "design": {
+        "title": "先进设计",
+        "description": "采用尖端技术和优化设计的LED驱动器，实现最佳性能。"
+      },
+      "quality": {
+        "title": "高品质",
+        "description": "按照最高质量标准和国际认证生产的产品。"
+      },
+      "efficiency": {
+        "title": "能源效率",
+        "description": "最大化能源效率并减少消耗的解决方案。"
+      },
+      "support": {
+        "title": "技术支持",
+        "description": "专业技术支持团队提供咨询和问题解决。"
+      }
+    }
+  },
+  "products": {
+    "title": "我们的产品",
+    "subtitle": "满足您所有需求的高品质LED驱动器",
+    "categories": "产品类别",
+    "catalog": "LED驱动器目录",
+    "requestInfo": "索取信息",
+    "customDriver": "需要定制驱动器？",
+    "customDriverDesc": "我们为特定项目提供定制解决方案。我们的技术团队可以开发适合您确切需求的LED驱动器。",
+    "contactSpecialist": "联系专家",
+    "specifications": "规格：",
+    "features": "特点：",
+    "productImage": "产品图片",
+    "productFeatures": {
+      "ganTechnology": "GaN技术",
+      "naturalCooling": "自然冷却",
+      "manualDimming": "手动调光",
+      "silent": "静音",
+      "compactDesign": "紧凑设计",
+      "highEfficiency": "高效率",
+      "robustDesign": "坚固设计",
+      "maxPower": "最大功率",
+      "efficient": "高效"
+    },
+    "categoryTypes": {
+      "lowPower": {
+        "name": "低功率",
+        "description": "高达50W - 适合住宅应用"
+      },
+      "mediumPower": {
+        "name": "中等功率",
+        "description": "51W - 100W - 适合商业应用"
+      },
+      "highPower": {
+        "name": "大功率",
+        "description": "超过100W - 用于工业应用"
+      },
+      "industrial": {
+        "name": "工业级",
+        "description": "极端条件 - 最大耐用性"
+      }
+    }
+  },
+  "services": {
+    "title": "我们的服务",
+    "subtitle": "满足您所有LED驱动器需求的完整解决方案",
+    "workProcess": "工作流程",
+    "workProcessDesc": "这是我们与您合作提供最佳解决方案的方式",
+    "faq": "常见问题",
+    "faqDesc": "关于我们服务的最常见问题的答案",
+    "readyToStart": "准备开始您的项目？",
+    "readyToStartDesc": "联系我们的技术团队获取免费咨询，了解我们如何帮助您。",
+    "requestConsultation": "申请咨询",
+    "serviceTypes": {
+      "customDevelopment": {
+        "title": "定制开发",
+        "description": "我们根据您的规格设计和制造定制LED驱动器。"
+      },
+      "technicalSupport": {
+        "title": "技术支持",
+        "description": "专业团队解决技术问题和实施问题。"
+      },
+      "installation": {
+        "title": "安装和调试",
+        "description": "大型项目的完整安装和配置服务。"
+      },
+      "maintenance": {
+        "title": "预防性维护",
+        "description": "维护计划确保最佳运行。"
+      }
+    },
+    "workSteps": {
+      "consultation": {
+        "title": "咨询",
+        "description": "我们分析您的需求和具体要求"
+      },
+      "proposal": {
+        "title": "提案",
+        "description": "我们制定个性化的技术和商业提案"
+      },
+      "development": {
+        "title": "开发",
+        "description": "我们根据规格制造和测试解决方案"
+      },
+      "delivery": {
+        "title": "交付",
+        "description": "安装、调试和持续支持"
+      }
+    }
+  },
+  "about": {
+    "title": "关于GXTRONIC",
+    "subtitle": "LED驱动器创新和制造的领导者",
+    "ourHistory": "我们的历史",
+    "ourMission": "我们的使命",
+    "missionText": "开发和制造高品质LED驱动器，使我们的客户能够创建高效、耐用和可持续的照明解决方案，为更美好的未来。",
+    "ourValues": "我们的价值观",
+    "ourValuesDesc": "指导我们日常工作的原则",
+    "ourJourney": "我们的旅程",
+    "ourAchievements": "我们的成就",
+    "ledFuture": "LED照明的未来",
+    "ledFutureDesc": "我们继续创新，提供最佳的LED驱动器解决方案，融合物联网、智能控制和先进监控系统等新兴技术。",
+    "continuousInnovation": "持续创新",
+    "historyText": "GXTRONIC成立于2013年，旨在通过高效率和卓越品质的驱动器革新LED照明行业。自成立以来，我们专注于开发最大化LED照明系统性能的电力电子解决方案。",
+    "historyText2": "凭借十多年的经验，我们已成为亚洲市场的领先企业，提供符合最高国际质量和能效标准的创新产品。",
+    "historyText3": "我们对卓越的承诺使我们与亚洲各地的客户建立了持久的关系，从小型企业到大型工业公司。",
+    "values": {
+      "innovation": {
+        "title": "创新",
+        "description": "持续开发新一代LED驱动器的先进技术。"
+      },
+      "quality": {
+        "title": "质量",
+        "description": "承诺在所有产品中达到最高质量标准。"
+      },
+      "sustainability": {
+        "title": "可持续性",
+        "description": "有助于节能和环保的高效解决方案。"
+      },
+      "expertise": {
+        "title": "专业知识",
+        "description": "在电力电子领域拥有丰富经验的专业工程师团队。"
+      }
+    },
+    "achievements": {
+      "experience": "超过10年的行业经验",
+      "presence": "覆盖20多个亚洲国家",
+      "projects": "完成50多个工业项目",
+      "certifications": "CE、RoHS和UL认证",
+      "team": "25名以上专业工程师团队",
+      "rnd": "研发投入占营业额的15%"
+    },
+    "timeline": {
+      "2013": {
+        "title": "GXTRONIC成立",
+        "description": "作为专门从事LED电力电子的公司开始。"
+      },
+      "2015": {
+        "title": "第一条生产线",
+        "description": "推出我们第一个高效LED驱动器系列。"
+      },
+      "2017": {
+        "title": "亚洲扩张",
+        "description": "在日本、韩国和新加坡开设市场。"
+      },
+      "2019": {
+        "title": "ISO 9001认证",
+        "description": "获得质量认证和工艺优化。"
+      },
+      "2021": {
+        "title": "研发部门",
+        "description": "创建研究与开发部门。"
+      },
+      "2024": {
+        "title": "新技术",
+        "description": "推出具有物联网和远程控制的智能驱动器。"
+      }
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "我们在这里帮助您实现LED照明项目",
+    "sendQuery": "向我们发送询问",
+    "sendQueryDesc": "填写表格，我们的技术团队将与您联系",
+    "whyChoose": "为什么选择GXTRONIC？",
+    "immediateResponse": "需要立即回复？",
+    "immediateResponseDesc": "如需紧急咨询或即时技术支持，请在工作时间内直接致电。",
+    "urgentTitle": "需要立即回复？",
+    "urgentDescription": "如需紧急咨询或即时技术支持，请在工作时间内直接致电。",
+    "form": {
+      "title": "向我们发送询问",
+      "description": "填写表格，我们的技术团队将与您联系",
+      "fullName": "全名",
+      "company": "公司",
+      "email": "电子邮件",
+      "phone": "电话",
+      "queryType": "询问类型",
+      "message": "留言",
+      "messagePlaceholder": "描述您的项目或询问...",
+      "submit": "发送询问",
+      "loading": "正在加载表单...",
+      "queryTypes": {
+        "products": "产品信息",
+        "quote": "报价请求",
+        "custom": "定制开发",
+        "support": "技术支持",
+        "distribution": "分销机会",
+        "other": "其他"
+      }
+    },
+    "info": {
+      "email": {
+        "title": "电子邮件",
+        "content": "info@gxtronic.com",
+        "subtitle": "sales@gxtronic.com"
+      },
+      "phone": {
+        "title": "电话",
+        "content": "+86 XXX XXXX XXXX",
+        "subtitle": "周一至周五 9:00 - 18:00"
+      },
+      "location": {
+        "title": "位置",
+        "content": "中国上海",
+        "subtitle": "覆盖区域：亚太地区"
+      },
+      "schedule": {
+        "title": "工作时间",
+        "content": "周一至周五：9:00 - 18:00",
+        "subtitle": "周六：9:00 - 14:00"
+      }
+    },
+    "reasons": {
+      "experience": {
+        "title": "工业经验",
+        "description": "超过10年为工业开发LED解决方案"
+      },
+      "support": {
+        "title": "个性化支持",
+        "description": "与我们的专业工程师直接沟通"
+      },
+      "coverage": {
+        "title": "亚洲覆盖",
+        "description": "全亚洲快速运输和技术支持"
+      }
+    }
+  },
+  "footer": {
+    "description": "工业和商业应用高品质LED驱动器的领先制造商。",
+    "contact": "联系方式",
+    "followUs": "关注我们",
+    "allRightsReserved": "版权所有。"
+  }
+}

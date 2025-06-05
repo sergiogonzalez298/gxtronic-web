@@ -10,7 +10,6 @@ import {
 import Grid from '@mui/material/Grid2';
 import {
   Email,
-  LocationOn,
   LinkedIn,
   Facebook,
 } from '@mui/icons-material';
@@ -51,10 +50,10 @@ export default function Footer() {
                   {tContact('email.content')}
                 </Link>
               </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <LocationOn sx={{ mr: 1, fontSize: 20 }} />
-                <Typography variant="body2">{tContact('location.content')}</Typography>
-              </Box>
+              {/*<Box sx={{ display: 'flex', alignItems: 'center' }}>*/}
+              {/*  <LocationOn sx={{ mr: 1, fontSize: 20 }} />*/}
+              {/*  <Typography variant="body2">{tContact('location.content')}</Typography>*/}
+              {/*</Box>*/}
             </Box>
           </Grid>
           <Grid size={{ xs: 12, md: 4 }}>

@@ -232,7 +232,7 @@ export default function ProductosPage() {
                     </Grid>
                   </Box>
 
-                  <Link href="/contacto" style={{ textDecoration: 'none' }}>
+                  <Link href="/contact" style={{ textDecoration: 'none' }}>
                     <Button variant="contained" fullWidth>
                       {t('requestInfo')}
                     </Button>
@@ -256,7 +256,7 @@ export default function ProductosPage() {
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>
-              <Link href="/contacto" style={{ textDecoration: 'none' }}>
+              <Link href="/contact" style={{ textDecoration: 'none' }}>
                 <Button variant="contained" size="large" fullWidth>
                   {t('contactSpecialist')}
                 </Button>
