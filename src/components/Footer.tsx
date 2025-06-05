@@ -3,11 +3,11 @@
 import {
   Box,
   Container,
-  Grid,
   Typography,
   Link,
   IconButton,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import {
   Email,
   LocationOn,
@@ -32,7 +32,7 @@ export default function Footer() {
     >
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom sx={{ textAlign: { xs: 'center', md: 'left' } }}>
               GXTRONIC
             </Typography>
@@ -40,7 +40,7 @@ export default function Footer() {
               {t('description')}
             </Typography>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom sx={{ textAlign: { xs: 'center', md: 'left' } }}>
               {t('contact')}
             </Typography>
@@ -57,7 +57,7 @@ export default function Footer() {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom sx={{ textAlign: { xs: 'center', md: 'left' } }}>
               {t('followUs')}
             </Typography>

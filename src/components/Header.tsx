@@ -11,7 +11,6 @@ import {
   Drawer,
   List,
   ListItem,
-  Divider,
   Avatar,
 } from '@mui/material';
 import { 
@@ -25,7 +24,6 @@ import {
 } from '@mui/icons-material';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
-import LanguageSelector from './LanguageSelector';
 import { useState } from 'react';
 
 export default function Header() {
@@ -34,10 +32,10 @@ export default function Header() {
 
   const navigationItems = [
     { label: t('home'), href: '/', icon: <Home /> },
-    { label: t('products'), href: '/productos', icon: <Inventory /> },
-    { label: t('services'), href: '/servicios', icon: <MiscellaneousServices /> },
-    { label: t('about'), href: '/nosotros', icon: <Info /> },
-    { label: t('contact'), href: '/contacto', icon: <ContactMail /> },
+    { label: t('products'), href: '/products', icon: <Inventory /> },
+    { label: t('services'), href: '/services', icon: <MiscellaneousServices /> },
+    { label: t('about'), href: '/about', icon: <Info /> },
+    { label: t('contact'), href: '/contact', icon: <ContactMail /> },
   ];
 
   const handleDrawerToggle = () => {
@@ -76,14 +74,10 @@ export default function Header() {
                   </Button>
                 </Link>
               ))}
-              <Box sx={{ ml: 2 }}>
-                <LanguageSelector />
-              </Box>
             </Box>
 
             {/* Mobile menu button */}
             <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}>
-              <LanguageSelector />
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
@@ -197,15 +191,6 @@ export default function Header() {
           ))}
         </List>
 
-        <Divider sx={{ mx: 2, borderColor: 'rgba(255, 255, 255, 0.1)' }} />
-
-        {/* Language selector section */}
-        <Box sx={{ p: 3 }}>
-          <Typography variant="body2" sx={{ mb: 2, opacity: 0.8 }}>
-            Idioma / Language
-          </Typography>
-          <LanguageSelector />
-        </Box>
 
         {/* Footer del drawer */}
         <Box sx={{ 

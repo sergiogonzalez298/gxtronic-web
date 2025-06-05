@@ -5,11 +5,11 @@ import {
   Container,
   Typography,
   Button,
-  Grid,
   Card,
   CardContent,
   Chip,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import {
   Engineering,
   HighQuality,
@@ -57,7 +57,7 @@ export default function Home() {
       >
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Typography variant="h1" gutterBottom>
                 {t('title')}
               </Typography>
@@ -91,7 +91,7 @@ export default function Home() {
                 </Link>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box
                 sx={{
                   bgcolor: 'rgba(255, 255, 255, 0.1)',
@@ -122,7 +122,7 @@ export default function Home() {
         
         <Grid container spacing={4}>
           {features.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
               <Card sx={{ height: '100%', textAlign: 'center' }}>
                 <CardContent>
                   <Box sx={{ color: 'primary.main', mb: 2 }}>
@@ -144,7 +144,7 @@ export default function Home() {
       <Box sx={{ bgcolor: 'grey.50', py: 8 }}>
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Typography variant="h3" gutterBottom>
                 {t('products.title')}
               </Typography>
@@ -163,7 +163,7 @@ export default function Home() {
                 </Button>
               </Link>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box
                 sx={{
                   bgcolor: 'white',

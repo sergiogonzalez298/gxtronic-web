@@ -4,7 +4,6 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
   Card,
   CardContent,
   List,
@@ -16,6 +15,7 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import {
   CheckCircle,
   Build,
@@ -123,7 +123,7 @@ export default function ServiciosPage() {
       <Container maxWidth="lg" sx={{ py: 6 }}>
         <Grid container spacing={4}>
           {services.map((service, index) => (
-            <Grid item xs={12} md={6} key={index}>
+            <Grid size={{ xs: 12, md: 6 }} key={index}>
               <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -162,7 +162,7 @@ export default function ServiciosPage() {
           </Typography>
           
           <Grid container spacing={4}>
-            <Grid item xs={12} md={3}>
+            <Grid size={{ xs: 12, md: 3 }}>
               <Box sx={{ textAlign: 'center' }}>
                 <Box
                   sx={{
@@ -188,7 +188,7 @@ export default function ServiciosPage() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid size={{ xs: 12, md: 3 }}>
               <Box sx={{ textAlign: 'center' }}>
                 <Box
                   sx={{
@@ -214,7 +214,7 @@ export default function ServiciosPage() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid size={{ xs: 12, md: 3 }}>
               <Box sx={{ textAlign: 'center' }}>
                 <Box
                   sx={{
@@ -240,7 +240,7 @@ export default function ServiciosPage() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={3}>
+            <Grid size={{ xs: 12, md: 3 }}>
               <Box sx={{ textAlign: 'center' }}>
                 <Box
                   sx={{
@@ -295,7 +295,7 @@ export default function ServiciosPage() {
       <Box sx={{ bgcolor: 'primary.main', color: 'white', py: 6 }}>
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={8}>
+            <Grid size={{ xs: 12, md: 8 }}>
               <Typography variant="h4" gutterBottom>
                 ¿Listo para empezar tu proyecto?
               </Typography>
@@ -304,7 +304,7 @@ export default function ServiciosPage() {
                 y descubre cómo podemos ayudarte.
               </Typography>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid size={{ xs: 12, md: 4 }}>
               <Button
                 variant="contained"
                 color="secondary"
