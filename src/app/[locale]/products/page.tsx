@@ -35,7 +35,7 @@ export default function ProductosPage() {
       reference: '91885',
       image: '/images/products/gxtronic-24v-100w.jpg',
       features: [tFeatures('ganTechnology'), tFeatures('naturalCooling'), tFeatures('manualDimming'), tFeatures('silent')],
-      description: 'Fuente de alimentación compacta con tecnología de nitruro de galio (GaN) para instalaciones de tiras LED.',
+      description: 'Compact power supply with gallium nitride (GaN) technology for LED strip installations.',
       specifications: {
         voltage: '24V DC',
         power: '100W',
@@ -51,13 +51,13 @@ export default function ProductosPage() {
       reference: '91887',
       image: '/images/products/gxtronic-24v-200w.jpg',
       features: [tFeatures('ganTechnology'), tFeatures('compactDesign'), tFeatures('highEfficiency'), tFeatures('naturalCooling')],
-      description: 'Fuente de alimentación de alta potencia con tecnología GaN para aplicaciones profesionales.',
+      description: 'High-power supply with GaN technology for professional applications.',
       specifications: {
         voltage: '24V DC',
         power: '200W',
         amperage: '8.3A',
         protection: 'IP20',
-        cooling: 'Convección natural',
+        cooling: 'Natural convection',
       },
     },
     {
@@ -67,13 +67,13 @@ export default function ProductosPage() {
       reference: '91889',
       image: '/images/products/gxtronic-24v-400w.jpg',
       features: [tFeatures('ganTechnology'), tFeatures('maxPower'), tFeatures('robustDesign'), tFeatures('highEfficiency')],
-      description: 'Fuente de alimentación de máxima potencia para instalaciones LED de gran escala.',
+      description: 'Maximum power supply for large-scale LED installations.',
       specifications: {
         voltage: '24V DC',
         power: '400W',
         amperage: '16.6A',
         protection: 'IP20',
-        cooling: 'Convección natural',
+        cooling: 'Natural convection',
       },
     },
     {
@@ -83,7 +83,7 @@ export default function ProductosPage() {
       reference: '91884',
       image: '/images/products/gxtronic-24v-60w.jpg',
       features: [tFeatures('ganTechnology'), tFeatures('compactDesign'), tFeatures('manualDimming'), tFeatures('efficient')],
-      description: 'Fuente de alimentación compacta con tecnología GaN ideal para aplicaciones de menor potencia.',
+      description: 'Compact power supply with GaN technology ideal for lower power applications.',
       specifications: {
         voltage: '24V DC',
         power: '60W',
@@ -219,12 +219,12 @@ export default function ProductosPage() {
                       {Object.entries(product.specifications).map(([key, value], index) => (
                         <Grid size={{ xs: 6 }} key={index}>
                           <Typography variant="caption" color="text.secondary">
-                            {key === 'voltage' && 'Voltaje: '}
-                            {key === 'power' && 'Potencia: '}
-                            {key === 'amperage' && 'Amperaje: '}
-                            {key === 'protection' && 'Protección: '}
+                            {key === 'voltage' && 'Voltage: '}
+                            {key === 'power' && 'Power: '}
+                            {key === 'amperage' && 'Amperage: '}
+                            {key === 'protection' && 'Protection: '}
                             {key === 'dimming' && 'Dimming: '}
-                            {key === 'cooling' && 'Refrigeración: '}
+                            {key === 'cooling' && 'Cooling: '}
                             {value}
                           </Typography>
                         </Grid>
